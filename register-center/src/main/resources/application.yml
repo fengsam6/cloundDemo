@@ -1,0 +1,14 @@
+server:
+  port: 8101
+eureka:
+  instance:
+    ##注册中心的ip地址
+    hostname: 127.0.0.1
+  client:
+    service-url:
+      ##注册中心地址
+      defaultZone: http://${eureka.instance.hostname}:8101/eureka
+      ###自己是注册中心，是否要将自己注册到注册中心去,但是集群的时候需要设置为true
+    register-with-eureka: false
+    ###自己是注册中心，不需要去检索服务信息
+    fetch-registry: false
