@@ -9,12 +9,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>service-api</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>user-service-api</module>
-        <module>goods-service-api</module>
-    </modules>
-
+    <artifactId>tool-center</artifactId>
+<modules>
+    <module>renren-generator</module>
+    <module>system-generator</module>
+</modules>
 
 </project>

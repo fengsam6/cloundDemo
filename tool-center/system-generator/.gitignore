@@ -18,6 +18,7 @@ target/
 *.iws
 *.iml
 *.ipr
+.mvn
 
 ### NetBeans ###
 /nbproject/private/
@@ -27,6 +28,10 @@ target/
 /.nb-gradle/
 build/
 
+
 ### VS Code ###
 .vscode/
-/tool-center/system-generator/src/main/java/com/feng/goods/
+
+/com/feng/classsystem
+/src/main/java/com/feng/user/
+/src/main/java/com/feng/goods/

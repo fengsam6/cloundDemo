@@ -30,6 +30,8 @@
         <module>register-center</module>
         <module>service-api</module>
         <module>api-gateway</module>
+        <module>tool-center</module>
+        <module>goods-seckill-web</module>
     </modules>
 
 

@@ -44,8 +44,8 @@
         </dependency>
     </dependencies>
     <modules>
-        <module>user-center</module>
-        <module>blog-center</module>
+        <module>userService</module>
+        <module>goodsService</module>
     </modules>
 
 </project>
