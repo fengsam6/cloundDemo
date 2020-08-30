@@ -32,6 +32,7 @@
         <module>api-gateway</module>
         <module>tool-center</module>
         <module>goods-seckill-web</module>
+        <module>system-common</module>
     </modules>
 
 

@@ -4,11 +4,15 @@ import com.feng.user.entity.SkUser;
 import com.feng.user.dao.SkUserMapper;
 import com.feng.user.service.SkUserService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.github.pagehelper.PageHelper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>
- *  服务实现类
+ * 服务实现类
  * </p>
  *
  * @author coder
@@ -16,5 +20,13 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class SkUserServiceImpl extends ServiceImpl<SkUserMapper, SkUser> implements SkUserService {
+    @Autowired
+    private SkUserMapper skUserMapper;
 
+    @Override
+    public List<SkUser> listPage(int pageNum, int pageSize) {
+        PageHelper.startPage(pageNum,pageSize);
+        List<SkUser> userList = skUserMapper.selectList(null);
+        return userList;
+    }
 }
