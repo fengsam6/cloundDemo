@@ -7,9 +7,9 @@
         <groupId>com.feng</groupId>
         <version>1.0.0</version>
     </parent>
-    <artifactId>goods-seckill-web</artifactId>
+    <artifactId>goods-seckill-ui</artifactId>
     <version>1.0.0</version>
-    <name>goods-seckill-web</name>
+    <name>goods-seckill-ui</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -20,6 +20,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
 
         <dependency>

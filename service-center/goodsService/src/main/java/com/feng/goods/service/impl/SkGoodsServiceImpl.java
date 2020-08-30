@@ -4,7 +4,10 @@ import com.feng.goods.entity.SkGoods;
 import com.feng.goods.dao.SkGoodsMapper;
 import com.feng.goods.service.SkGoodsService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.github.pagehelper.PageHelper;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>
@@ -17,4 +20,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class SkGoodsServiceImpl extends ServiceImpl<SkGoodsMapper, SkGoods> implements SkGoodsService {
 
+    @Override
+    public List<SkGoods> listPage(int pageNum, int pageSize) {
+        PageHelper.startPage(pageNum,pageSize);
+        List<SkGoods> skGoods = this.selectList(null);
+        return skGoods;
+    }
 }
