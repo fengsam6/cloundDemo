@@ -2,6 +2,7 @@ package com.feng.goods.service;
 
 import com.feng.goods.entity.SkGoods;
 import com.baomidou.mybatisplus.service.IService;
+import com.github.pagehelper.PageInfo;
 
 import java.util.List;
 
@@ -15,5 +16,5 @@ import java.util.List;
  */
 public interface SkGoodsService extends IService<SkGoods> {
 
-    List<SkGoods> listPage(int pageNum, int pageSize);
+    PageInfo<SkGoods> listPage(int pageNum, int pageSize);
 }

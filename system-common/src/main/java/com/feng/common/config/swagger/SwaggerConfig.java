@@ -21,7 +21,7 @@ public class SwaggerConfig implements WebMvcConfigurer {
 
     @Bean
     public Docket createRestApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
+        return new Docket(DocumentationType.SWAGGER_12)
                 .apiInfo(apiInfo())
                 .select()
                 .apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))
@@ -41,7 +41,7 @@ public class SwaggerConfig implements WebMvcConfigurer {
                 .title(appName + " restful API接口")
                 .termsOfServiceUrl(url)
                 .contact("rf")
-                .version("1.0")
+                .version("2.0")
                 .build();
     }
 

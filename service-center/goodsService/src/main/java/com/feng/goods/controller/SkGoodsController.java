@@ -5,6 +5,8 @@ import com.feng.common.entity.ResponseResult;
 import com.feng.common.util.ResponseResultUtil;
 import com.feng.goods.entity.SkGoods;
 import com.feng.goods.service.SkGoodsService;
+import com.github.pagehelper.PageInfo;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,14 +23,15 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/skGoods")
+@Api("商品查找")
 public class SkGoodsController {
     @Autowired
     private SkGoodsService skGoodsService;
     @GetMapping("/")
     @ApiOperation(value = "分页查找商品信息", notes = "分页查找商品信息")
-    ResponseResult list(@RequestParam(defaultValue = "1") int pageNum, @RequestParam(defaultValue = "20") int pageSize) {
-        List<SkGoods> userList = skGoodsService.listPage(pageNum,pageSize);
-        return ResponseResultUtil.renderSuccess(userList);
+    ResponseResult<PageInfo<SkGoods>> list(@RequestParam(defaultValue = "1") int pageNum, @RequestParam(defaultValue = "20") int pageSize) {
+        PageInfo<SkGoods> goodsPageInfo = skGoodsService.listPage(pageNum,pageSize);
+        return ResponseResultUtil.renderSuccess(goodsPageInfo);
     }
 
     @ApiOperation(value = "根据id查询商品信息", notes = "根据id查询商品信息")

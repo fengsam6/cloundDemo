@@ -1,0 +1,47 @@
+###网管服务
+server:
+  port: 9999
+###服务别名---服务注册到注册中心的名称
+spring:
+  application:
+    name: api-gateway
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        # 路由标识（id：标识，具有唯一性）   简单尝试
+        - id: user
+          # 目标服务地址（uri：地址，请求转发后的地址）
+          uri: lb://user
+          # 路由条件（predicates：断言，匹配 HTTP 请求内容）
+          predicates:
+            ## 转发地址格式为 uri/{Path}
+           - Path=/userService/**
+
+#        - id: secKill
+#                # 目标服务地址（uri：地址，请求转发后的地址）
+#          uri: lb://secKill
+#                # 路由条件（predicates：断言，匹配 HTTP 请求内容）
+#          predicates:
+#                  ## 转发地址格式为 uri/{Path}
+#          - Path=/secKill/**
+#
+#        - id: goods
+#             # 目标服务地址（uri：地址，请求转发后的地址）
+#          uri: lb://goods
+#               # 路由条件（predicates：断言，匹配 HTTP 请求内容）
+#          predicates:
+#                 ## 转发地址格式为 uri/{Path}
+#          - Path=/goods/**
+
+#debug: true

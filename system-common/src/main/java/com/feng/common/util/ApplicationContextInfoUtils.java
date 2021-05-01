@@ -19,7 +19,7 @@ public class ApplicationContextInfoUtils {
         printRegisterInfo(environment);
         String ip = "localhost";
         String indexUrl = "http://"+ip+":"+port+contextPath;
-        System.out.printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> "+appName+"首页url：%s>>>>>>>>>>>>>>>>>>>>>>\n",indexUrl);
+//        System.out.printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> "+appName+"首页url：%s>>>>>>>>>>>>>>>>>>>>>>\n",indexUrl);
         System.out.printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  后端swagger接口文档url：%s>>>>>>>>>>>>>>>>>>>>>\n",indexUrl+"/swagger-ui.html");
         System.out.printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 后端 druid 监控中心url：%s,用户名 admin，密码 admin>>>>>>>>>>>>>>>>>>>\n",indexUrl+"/druid");
 
@@ -30,13 +30,10 @@ public class ApplicationContextInfoUtils {
      * @param environment
      */
     public static void printRegisterInfo(Environment environment){
-        String eurekaUrl = environment.getProperty("eureka.client.service-url.defaultZone");
-        if(!StringUtils.isEmpty(eurekaUrl)){
-            int i=-1;
-            if((i=eurekaUrl.lastIndexOf("/eureka"))>0){
-                eurekaUrl = eurekaUrl.substring(0,i);
-            }
-            System.out.printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>  注册中心地址：%s >>>>>>>>>>>>>>>\n",eurekaUrl);
+        String registerCenterUrl = environment.getProperty("spring.cloud.nacos.discovery.server-addr");
+        if(!StringUtils.isEmpty(registerCenterUrl)){
+            registerCenterUrl="http://"+registerCenterUrl+"/nacos";
+            System.out.printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>  注册中心地址：%s >>>>>>>>>>>>>>>\n",registerCenterUrl);
         }
     }
 }

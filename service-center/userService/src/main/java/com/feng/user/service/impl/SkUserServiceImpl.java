@@ -5,6 +5,7 @@ import com.feng.user.dao.SkUserMapper;
 import com.feng.user.service.SkUserService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,9 +25,9 @@ public class SkUserServiceImpl extends ServiceImpl<SkUserMapper, SkUser> impleme
     private SkUserMapper skUserMapper;
 
     @Override
-    public List<SkUser> listPage(int pageNum, int pageSize) {
+    public PageInfo listPage(int pageNum, int pageSize) {
         PageHelper.startPage(pageNum,pageSize);
         List<SkUser> userList = skUserMapper.selectList(null);
-        return userList;
+        return new PageInfo<>(userList);
     }
 }

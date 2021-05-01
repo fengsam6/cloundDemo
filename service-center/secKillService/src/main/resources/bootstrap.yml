@@ -1,0 +1,22 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: sec-kill
+  profiles:
+#    切换配置文件
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yml
+        shared-configs:
+          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+
+# 激活Sentinel对Feign的支持
+feign:
+  sentinel:
+    enabled: true
