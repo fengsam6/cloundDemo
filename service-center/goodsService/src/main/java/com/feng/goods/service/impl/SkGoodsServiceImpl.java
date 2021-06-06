@@ -1,9 +1,9 @@
 package com.feng.goods.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.feng.goods.entity.SkGoods;
 import com.feng.goods.dao.SkGoodsMapper;
 import com.feng.goods.service.SkGoodsService;
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
@@ -24,7 +24,7 @@ public class SkGoodsServiceImpl extends ServiceImpl<SkGoodsMapper, SkGoods> impl
     @Override
     public PageInfo<SkGoods> listPage(int pageNum, int pageSize) {
         PageHelper.startPage(pageNum,pageSize);
-        List<SkGoods> skGoods = this.selectList(null);
+        List<SkGoods> skGoods = this.list(null);
         return new PageInfo<>(skGoods);
     }
 }

@@ -1,7 +1,7 @@
 package com.feng.goods.dao;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.feng.goods.entity.SkGoods;
-import com.baomidou.mybatisplus.mapper.BaseMapper;
 
 /**
  * <p>

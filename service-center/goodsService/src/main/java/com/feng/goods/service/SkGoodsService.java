@@ -1,10 +1,8 @@
 package com.feng.goods.service;
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.feng.goods.entity.SkGoods;
-import com.baomidou.mybatisplus.service.IService;
 import com.github.pagehelper.PageInfo;
-
-import java.util.List;
 
 /**
  * <p>

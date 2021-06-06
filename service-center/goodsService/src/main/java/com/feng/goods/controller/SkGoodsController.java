@@ -37,21 +37,21 @@ public class SkGoodsController {
     @ApiOperation(value = "根据id查询商品信息", notes = "根据id查询商品信息")
     @GetMapping("/{id}")
     public ResponseResult getDetailById(@PathVariable("id") Long id) {
-        SkGoods skGoods = skGoodsService.selectById(id);
+        SkGoods skGoods = skGoodsService.getById(id);
         return ResponseResultUtil.renderSuccess(skGoods);
     }
 
     @ApiOperation(value = "添加商品", notes = "添加商品")
     @PutMapping
     public ResponseResult add(SkGoods skGoods) {
-        skGoodsService.insert(skGoods);
+        skGoodsService.save(skGoods);
         return ResponseResultUtil.renderSuccessMsg("添加商品成功");
     }
 
     @ApiOperation(value = "根据id删除商品", notes = "根据id删除商品")
     @DeleteMapping("/{id}")
     public ResponseResult deleteById(@PathVariable("id") Long id) {
-        skGoodsService.deleteById(id);
+        skGoodsService.removeById(id);
         return ResponseResultUtil.renderSuccessMsg("根据id删除商品成功");
     }
 

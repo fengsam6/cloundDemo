@@ -1,9 +1,9 @@
 package com.feng.user.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.feng.user.entity.SkUser;
 import com.feng.user.dao.SkUserMapper;
 import com.feng.user.service.SkUserService;
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;

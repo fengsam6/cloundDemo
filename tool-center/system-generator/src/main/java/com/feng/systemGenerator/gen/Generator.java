@@ -1,11 +1,12 @@
 package com.feng.systemGenerator.gen;
 
+
+import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
 import com.baomidou.mybatisplus.generator.config.GlobalConfig;
 import com.baomidou.mybatisplus.generator.config.PackageConfig;
 import com.baomidou.mybatisplus.generator.config.StrategyConfig;
-import com.baomidou.mybatisplus.generator.config.rules.DbType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.feng.systemGenerator.utils.DBPropertiesUtils;
 
@@ -121,7 +122,7 @@ public class Generator {
                 .setCapitalMode(true)
                 .setEntityLombokModel(false)
                 // 表名、字段名、是否使用下划线命名（默认 false）
-                .setDbColumnUnderline(true)
+//                .setDbColumnUnderline(true)
                 //实体是否为lombok模型
                 .setEntityLombokModel(false)
                 //生成@RestController控制器

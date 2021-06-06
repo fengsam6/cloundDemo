@@ -1,7 +1,7 @@
 package com.feng.user.dao;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.feng.user.entity.SkUser;
-import com.baomidou.mybatisplus.mapper.BaseMapper;
 
 /**
  * <p>

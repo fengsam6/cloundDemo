@@ -1,7 +1,7 @@
 package com.feng.user.service;
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.feng.user.entity.SkUser;
-import com.baomidou.mybatisplus.service.IService;
 import com.github.pagehelper.PageInfo;
 
 import java.util.List;

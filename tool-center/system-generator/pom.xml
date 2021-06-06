@@ -6,7 +6,6 @@
         <groupId>com.feng</groupId>
         <artifactId>clound-demo</artifactId>
         <version>1.0.0</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <artifactId>system-generator</artifactId>
     <version>1.0.0</version>
@@ -41,7 +40,13 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>2.2.0</version>
+            <version>3.3.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>3.4.1</version>
         </dependency>
 
 <!--        <dependency>-->

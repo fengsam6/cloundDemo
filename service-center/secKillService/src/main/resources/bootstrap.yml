@@ -20,3 +20,8 @@ spring:
 feign:
   sentinel:
     enabled: true
+
+rocketmq:
+  name-server: localhost:9876
+  producer:
+    group: seckill

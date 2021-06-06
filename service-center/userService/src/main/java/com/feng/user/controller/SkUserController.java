@@ -37,7 +37,7 @@ public class SkUserController {
 
     @GetMapping("/{id}")
     public ResponseResult<SkUser> getDetailById(@PathVariable("id") Long id) {
-        SkUser skUser = skUserService.selectById(id);
+        SkUser skUser = skUserService.getById(id);
         return ResponseResultUtil.renderSuccess(skUser);
     }
 }
