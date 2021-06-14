@@ -17,4 +17,6 @@ import java.util.List;
 public interface SkUserService extends IService<SkUser> {
 
     PageInfo listPage(int pageNum, int pageSize);
+
+    SkUser getUserByUserName(String userName);
 }

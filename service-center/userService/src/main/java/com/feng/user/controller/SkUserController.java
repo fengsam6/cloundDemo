@@ -40,5 +40,11 @@ public class SkUserController {
         SkUser skUser = skUserService.getById(id);
         return ResponseResultUtil.renderSuccess(skUser);
     }
+
+    @GetMapping("/getUserByUserName")
+    public ResponseResult<SkUser> getUserByUserName(String userName) {
+        SkUser skUser = skUserService.getUserByUserName(userName);
+        return ResponseResultUtil.renderSuccess(skUser);
+    }
 }
 

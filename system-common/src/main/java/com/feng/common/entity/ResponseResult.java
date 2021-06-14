@@ -10,6 +10,9 @@ public class ResponseResult<T> {
     private String message;
     private T data;
 
+    public ResponseResult() {
+    }
+
     public int getCode() {
         return code;
     }

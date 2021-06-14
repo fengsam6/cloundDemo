@@ -1,5 +1,6 @@
 package com.feng.user.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.feng.user.entity.SkUser;
 import com.feng.user.dao.SkUserMapper;
@@ -29,5 +30,12 @@ public class SkUserServiceImpl extends ServiceImpl<SkUserMapper, SkUser> impleme
         PageHelper.startPage(pageNum,pageSize);
         List<SkUser> userList = skUserMapper.selectList(null);
         return new PageInfo<>(userList);
+    }
+
+    @Override
+    public SkUser getUserByUserName(String userName) {
+        LambdaQueryWrapper<SkUser> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(SkUser::getNickname,userName);
+        return this.getOne(queryWrapper);
     }
 }

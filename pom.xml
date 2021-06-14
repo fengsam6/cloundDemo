@@ -59,10 +59,7 @@
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>3.3.0</version>
             </dependency>
-
         </dependencies>
-
-
     </dependencyManagement>
     <modules>
         <module>service-center</module>
@@ -72,6 +69,7 @@
         <module>tool-center</module>
         <module>goods-seckill-ui</module>
         <module>system-common</module>
+        <module>user-auth</module>
     </modules>
 
 

@@ -11,6 +11,17 @@
 
     <artifactId>service-api</artifactId>
     <packaging>pom</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.feng</groupId>
+            <artifactId>system-common</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
     <modules>
         <module>user-service-api</module>
         <module>goods-service-api</module>

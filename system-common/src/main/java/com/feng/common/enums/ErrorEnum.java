@@ -12,6 +12,7 @@ public enum ErrorEnum implements CommonError {
     USER_NOT_LOGIN(3401, "请先登录！"),
     UNAUTHORIZED(401,"没有授权"),
     FILE_NULL(4001,"选择上传文件"),
+    TOKEN_INVALIDATE(4002,"token无效"),
     PAGE_NOT_FOUND(404,"页面不存在"),
     FILE_UPLOAD_FAIL(4002,"上传文件失败"),
     FILE_FORMAT_ERROR(4003,"文件格式错误"),
